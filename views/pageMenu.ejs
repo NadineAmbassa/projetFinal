@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--auto compiled css & Js-->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+  <!-- JavaScript for adding
+    slider for multiple images
+    shown at once-->
+  <script type="text/javascript">
+    $(window).load(function () {
+      $(".carousel .item").each(function () {
+        var i = $(this).next();
+        i.length || (i = $(this).siblings(":first")),
+          i.children(":first-child").clone().appendTo($(this));
+
+        for (var n = 0; n < 4; n++)
+          (i = i.next()).length || (i = $(this).siblings(":first")),
+            i.children(":first-child").clone().appendTo($(this));
+      });
+    });
+  </script>
+</head>
+
+<body style="text-align: center;">
+  <!-- container class for bootstrap card-->
+  <div class="container">
+
+    <h2 style="text-align: center; margin-bottom:2% ; margin-top: 5%;">Les différentes catégories</h2>
+    <!-- bootstrap card with row name myCarousel as row 1-->
+    <div class="carousel slide" id="myCarousel">
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="col-xs-2">
+            <a href="/produits/maison">
+              <img src="https://cuisinebroder.com/wp-content/uploads/2022/10/Projet-Nebbiolo-3-Broder-V2-scaled.jpg"
+                class="img-responsive" style="width: 150px; height: 150px; object-fit: contain;">
+            </a>
+            <h4>Maison et Cuisine</h4>
+          </div>
+        </div>
+        <div class="item">
+          <div class="col-xs-2">
+            <a href="/produits/sport">
+              <img src="https://img.freepik.com/photos-gratuite/outils-sport_53876-138077.jpg?w=2000"
+                class="img-responsive" style="width: 150px; height: 150px; object-fit: contain;">
+
+            </a>
+            <h4>Sport</h4>
+          </div>
+        </div>
+        <div class="item">
+          <div class="col-xs-2">
+            <a href="/produits/sante">
+              <img
+                src="https://thumbs.dreamstime.com/b/aromatherapy-station-thermale-traitement-de-beaut%C3%A9-et-fond-bien-%C3%AAtre-avec-l-huile-massage-fleurs-d-orchid%C3%A9e-serviettes-produits-142951172.jpg"
+                class="img-responsive" style="width: 150px; height: 150px; object-fit: contain;">
+            </a>
+            <h4>Santé et beauté</h4>
+          </div>
+        </div>
+        <div class="item">
+          <div class="col-xs-2">
+            <a href="/produits/electronique">
+              <img
+                src="data:image/jpeg;base64,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"
+                class="img-responsive" style="width: 150px; height: 150px; object-fit: contain;">
+            </a>
+            <h4>Electronique</h4>
+          </div>
+        </div>
+        <div class="item">
+          <div class="col-xs-2">
+            <a href="/produits/mode">
+              <img
+                src="https://assets-global.website-files.com/631e047ded5805d36bbd2efd/63233456a972a7c3fd349b0b_63220d2b8120db3bd6705cff_a3f35407-c86e-4f91-be21-59c6d305aad0_magasin_vetement.png"
+                class="img-responsive" style="width: 150px; height: 150px; object-fit: contain;">
+            </a>
+            <h4>Mode</h4>
+          </div>
+        </div>
+      </div>
+
+
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <i class="glyphicon glyphicon-chevron-left"> </i>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <i class="glyphicon glyphicon-chevron-right"> </i>
+      </a>
+    </div>
+  </div>
+
+  <h4>
+    <a href="/produits">
+      Voir tous nos produits
+      <i class="fa-solid fa-arrow-right fa-beat"></i>
+    </a>
+  </h4>
+  <h2 style="text-align: center; margin-bottom: 20px; margin-top: 2%;">
+    Les meilleures offres
+  </h2>
+  <div class="container">
+    <div class="row">
+      <% produits.forEach(function(produit, index) { if (index < 3) { %>
+        <div class="col">
+          <div class="card mb-5">
+            <a href="/produits/detailsProduit/<%= produit._id %>">
+              <img src="<%= produit.image%>" height="200" width="200"
+              style="object-fit: contain; border-bottom: 1px solid gray" class="card-img-top" alt="..." />
+            </a>
+            <div class="card-body" style="text-align: center;">
+              <h5 class="card-title"><strong>
+                  <%= produit.nom %> - <%= produit.prix %>$ CAD
+                </strong></h5>
+              <a href="/produits/detailsProduit/<%= produit._id %>" class="btn btn-primary">Voir l'article</a>
+            </div>
+          </div>
+        </div>
+        <% } }); %>
+    </div>
+
+    <div class="row">
+      <% produits.forEach(function(produit, index) { if (index>= 3 && index < 6) { %>
+          <div class="col">
+            <div class="card mb-5">
+              <a href="/produits/detailsProduit/<%= produit._id %>">
+                <img src="<%= produit.image%>" height="200" width="200"
+                style="object-fit: contain; border-bottom: 1px solid gray" class="card-img-top" alt="..." />
+              </a>
+              <div class="card-body" style="text-align: center;">
+                <h5 class="card-title"><strong>
+                    <%= produit.nom %> - <%= produit.prix %>$ CAD
+                  </strong></h5>
+                  <a href="/produits/detailsProduit/<%= produit._id %>" class="btn btn-primary">Voir l'article</a>
+              </div>
+            </div>
+          </div>
+          <% } }); %>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <% console.log(products) %>
+        <div class="container banner">
+            <!-- Banner -->
+            <div class="jumbotron intro" style="background-image: url('<%= banner %>');">
+                <h1 class="display-4" style="color: white"><%- bannerText %></h1>
+            </div>
+
+            <div class="col-md-9">
+                <div class="row">
+                    <% for (let i=0; i < products.length; i++) { %>
+                        <% if (i % 4===0) { %>
+                            <div class="w-100" style="padding-top: 3%"></div>
+
+                            <% } %>
+                                <div class="col-md-4">
+
+                                    <div class="card" style="width: 18rem; height: 100%;">
+                                        <a href="/produits/detailsProduit/<%= products[i]._id %>"><img
+                                                src="<%= products[i].image %>" height="200" width="200"
+                                                style="object-fit: contain; border-bottom: 1px solid gray"
+                                                class="card-img-top" alt="..." /></a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <%= products[i].nom %>
+                                            </h5>
+                                            <h5 class="card-title product-price">
+                                                <%= products[i].prix %>$ CAD
+                                            </h5>
+                                            <p class="card-text">
+                                                <%= products[i].description %>
+                                            </p>
+                                            <form action="/usagers/panier" method="POST">
+                                                <div class="mt-4">
+                                                    <input type="hidden" name="product" id="product"
+                                                        value="<%= products[i]._id %>">
+                                                    <button class="btn btn-success">
+                                                        <i class="fa fa-cart-plus"></i> Ajouter au panier
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

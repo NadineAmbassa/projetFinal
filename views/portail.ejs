@@ -1,0 +1,78 @@
+<% let admin = user.role.includes('admin'); %>
+<style>
+  /* Custom styling for chat page */
+  .chat-container {
+    display: flex;
+    height: 100vh;
+  }
+
+  .conversation-list {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+  }
+
+  .conversation-list h2 {
+    margin-bottom: 20px;
+  }
+
+  .conversation-list .list-group-item {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .conversation-list .list-group-item:hover {
+    background-color: #e9ecef;
+  }
+
+  .conversation-list .list-group-item .from {
+    font-weight: bold;
+  }
+
+  .conversation-list .list-group-item .last-message {
+    color: #6c757d;
+  }
+
+  .conversation-list .empty-message {
+    margin-top: 30px;
+  }
+  .top-right-link {
+    text-align: right;
+  }
+  p {
+    margin: 0;
+    color: #6c757d;
+  }
+</style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row chat-container">
+      <!-- Conversation List -->
+      <div class="col conversation-list">
+        <h2>Conversations</h2>
+        <%- include('./partiels/erreur_msg') %>
+        <div class="list-group">
+          <a href="/usagers/admin" class="top-right-link">Retourner au menu Admin</a>
+          <% if (conversations.length > 0) { %>
+          <% for (let i = 0; i < conversations.length; i++) { %>
+            <a href="/usagers/chat/<%= conversations[i]._id %>" class="list-group-item">
+              <span class="from"><%= conversations[i].messages[0].from %></span>
+              <p class="last-message">Dernier message: <%= conversations[i].messages[conversations[i].messages.length - 1].message %></p>
+              <p class="date">Date: <%= conversations[i].messages[conversations[i].messages.length - 1].timestamp.toLocaleString('fr-CA') %></p>
+              <a href="/usagers/supprimerConversation/<%= conversations[i]._id %>" class="btn btn-danger" style="background-color:#6c757d; border-color: black;" onclick="return confirmerSuppression()">Supprimer</a>
+            </a>
+            <% } %>
+          <% } else { %>
+            <h4 class="empty-message">Boite de message vide...</h4>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function confirmerSuppression() {
+        return confirm("Êtes-vous sur de vouloir supprimer cette conversation?")
+    }
+  </script>

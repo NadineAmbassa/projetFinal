@@ -1,0 +1,110 @@
+<div style="padding: 30px; width: 50%; margin:20px auto; background-color: #89cff0">
+  <%- include ('./partiels/erreur_msg') %>
+  <p><%= new Date().toLocaleDateString(); %></p>
+
+  <form
+    action="/produits/editer/<%= produit._id %>"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    <input type="hidden" name="_id" value="<%=produit._id%>" />
+    <div class="mb-5 EspaceInputPgAjouter">
+      <label for="nom" class="form-label">nom</label>
+      <input
+        type="text"
+        class="form-control"
+        name="nom"
+        id="nom"
+        placeholder="Entrez le nom"
+        value="<%=produit.nom%>"
+      />
+    </div>
+
+    <div class="mb-5 EspaceInputPgAjouter">
+      <label for="prix" class="form-label">Le prix</label>
+      <input
+        type="number"
+        class="form-control"
+        id="prix"
+        name="prix"
+        value="<%=produit.prix%>"
+      />
+    </div>
+
+    <div class="mb-5 EspaceInputPgAjouter">
+      <label for="description" class="form-label">Description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        name="description"
+        value="<%=produit.description%>"
+      />
+    </div>
+
+    <div class="mb-5 EspaceInputPgAjouter">
+      <label for="quantiter" class="form-label">Quantité</label>
+      <input
+        type="number"
+        class="form-control"
+        id="quantiter"
+        name="quantiter"
+        value="<%=produit.quantiter%>"
+      />
+    </div>
+
+    <div class="mb-5 EspaceInputPgAjouter">
+      <label for="image" class="form-label">Image du produit</label>
+      <input
+        type="text"
+        class="form-control"
+        id="image"
+        name="image"
+        value="<%=produit.image%>"
+      />
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="categorie" id="sport" value="sport">
+      <label class="form-check-label" for="sport">
+        Sport
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="categorie" id="mode" value="mode">
+      <label class="form-check-label" for="mode">
+        Mode
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="categorie" id="maison" value="maison">
+      <label class="form-check-label" for="maison">
+        Maison et cuisine
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="categorie" id="electronique" value="electronique">
+      <label class="form-check-label" for="electronique">
+        Électronique
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="categorie" id="sante" value="sante">
+      <label class="form-check-label" for="sante">
+        Santé et beauté
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary EspaceInputPgAjouter">
+      Modifier le produit
+    </button>
+    <button type="reset" class="btn btn-primary EspaceInputPgAjouter" onclick="window.location.href='/produits/editer/<%= produit._id %>'">
+      Annuler
+    </button>
+  </form>
+  <div style="text-align: right;">
+    <p><a href="/produits">Revenir à la liste des produits</a></p>
+</div>
+
+</div>
+

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <% console.log(user) %>
+
+    <% if(user){ %>
+      <% if (user.role.includes("gestion")) { %>
+        <div style="justify-content: center; align-items: center; text-align: center;">
+          <button class="btn btn-primary mt-3" type="submit">
+            <a href="/produits/gestion" style="color: white">
+              Menu gestion <i class="fa-solid fa-list-check"></i>
+            </a>
+          </button>
+        </div>
+      <% } %>
+    <% } %>
+
+        <div class="container banner">
+          <!-- Banner -->
+          <div class="jumbotron intro" style="background-image: url('<%= banner %>');">
+            <h1 class="display-4" style="color: white"><%- bannerText %></h1>
+          </div>
+
+          <!-- Filter Menu and Product List -->
+          <div class="row">
+            <div class="col-md-3" style="padding-top: 3%">
+
+              <!-- Vertical Filter Menu -->
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Filtres de recherche <i class="fa-solid fa-filter"></i></h5>
+                  <!-- Add your filter options here -->
+                  <form action="/produits/filtre" method="POST">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" value="AtoZ" id="filter1" name="filtre" />
+                      <label class="form-check-label" for="filter1"> Filtrer de A à Z </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" value="ZtoA" id="filter2" name="filtre" />
+                      <label class="form-check-label" for="filter2"> Filtrer de Z à A </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" value="numberDecroissant" id="filter2"
+                        name="filtre" />
+                      <label class="form-check-label" for="filter2"> Filtrer par prix <i
+                          class="fa-solid fa-arrow-up"></i>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" value="numberCroissant" id="filter2" name="filtre" />
+                      <label class="form-check-label" for="filter2"> Filtrer par prix <i
+                          class="fa-solid fa-arrow-down"></i>
+                      </label>
+                    </div>
+
+                    <input type="hidden" value="<%= banner %>" name="banner">
+
+                    <input type="hidden" value="<%= bannerText %>" name="bannerText">
+
+                    <input type="hidden" value="<%= categorie %>" name="categorie">
+
+                          <!-- Add more filters as needed -->
+                          <button class="btn btn-primary mt-3" type="submit">
+                            Rechercher <i class="fas fa-search"></i>
+                          </button>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="row">
+                <% for (let i=0; i < products.length; i++) { %>
+                  <% if (i % 3===0) { %>
+                    <div class="w-100" style="padding-top: 3%"></div>
+
+                    <% } %>
+                      <div class="col-md-4">
+
+                        <div class="card" style="width: 18rem; height: 100%;">
+                          <a href="/produits/detailsProduit/<%= products[i]._id %>"><img src="<%= products[i].image %>"
+                              height="200" width="200" style="object-fit: contain; border-bottom: 1px solid gray"
+                              class="card-img-top" alt="..." /></a>
+                          <div class="card-body">
+                            <h5 class="card-title">
+                              <%= products[i].nom %>
+                            </h5>
+                            <h5 class="card-title product-price">
+                              <%= products[i].prix %>$ CAD
+                            </h5>
+                            <p class="card-text">
+                              <%= products[i].description %>
+                            </p>
+                            <form action="/usagers/panier" method="POST">
+                              <div class="mt-4">
+                                <input type="hidden" name="product" id="product" value="<%= products[i]._id %>">
+                                <button class="btn btn-success">
+                                  <i class="fa fa-cart-plus"></i> Ajouter au panier
+                                </button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <% } %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

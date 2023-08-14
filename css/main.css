@@ -1,0 +1,46 @@
+.erreurs {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+#footer {
+  position: flex;
+  bottom: 0;
+  width: 100%;
+}
+
+.intro {
+  text-align: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.banner {
+  margin-top: 3%;
+}
+
+.EspaceInputPgAjouter {
+  margin-bottom: 2rem;
+  margin-right: 10px;
+}
+
+
+.card-container {
+  display: flex;
+}
+
+.card-img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-price {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #007bff;
+}

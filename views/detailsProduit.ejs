@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <title>
+    <% if (typeof(title) !=="undefined" ) { %>
+      <%= title %>
+        <% } else { %>
+          Voici un titre par défaut
+
+          <% } %>
+  </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+    .vertical-center {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .product-info {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .product-info h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .product-info p {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <% let gestion=false %>
+    <% if (user) gestion=user.role.includes('gestion'); %>
+
+      <div class="container">
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <img src="<%= products.image %>" height="300" width="300" alt="<%= products.nom %>" class="img-fluid" />
+          </div>
+          <div class="col-md-4">
+            <div class="vertical-center h-100">
+              <div class="product-info">
+                <h2 class="mb-3">
+                  <%= products.nom %>
+                </h2>
+                <p class="mb-2">
+                  <strong>Prix:</strong>
+                  <span class="product-price">
+                    <%= products.prix %> $CAD
+                  </span>
+                </p>
+                <p class="mb-2"><strong>Description:</strong>
+                  <%= products.description %>
+                </p>
+                <p class="mb-2"><strong>Quantiter disponible:</strong>
+                  <%= products.quantiter %>
+                </p>
+
+                <% if (gestion) { %>
+                  <div class="mt-4">
+                    <a href="/produits/supprimer/<%= products._id %>"
+                      onclick="return confirm('Etes-vous certain de vouloir supprimer cette fiche?');"
+                      class="btn btn-danger mr-2">
+                      <i class="fa fa-trash"></i> Supprimer
+                    </a>
+                    <a href="/produits/editer/<%= products._id %>" class="btn btn-primary">
+                      <i class="fa fa-pencil-alt fa-fw"></i> Editer
+                    </a>
+                  </div>
+                  <% } %>
+
+                    <form action="/usagers/panier" method="post">
+                      <input type="hidden" name="product" id="product" value="<%= products._id %>">
+                      <div class="mt-4">
+                        <button class="btn btn-success">
+                          <i class="fa fa-cart-plus"></i> Ajouter au panier
+                        </button>
+                      </div>
+                    </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Products Section -->
+        <h3 class="mt-5 text-center">Produits connexes</h3>
+        <div class="col-md-9 mx-auto">
+          <div class="row">
+            <% for (let i=0; i < produitsConnexe.length; i++) { %>
+              <% if (i % 3===0) { %>
+                <div class="w-100" style="padding-top: 3%"></div>
+                <% } %>
+                  <div class="col-md-4">
+                    <div class="card h-100">
+                      <a href="/produits/detailsProduit/<%= produitsConnexe[i]._id %>">
+                        <img src="<%= produitsConnexe[i].image %>" height="200" width="200"
+                          style="object-fit: contain; border-bottom: 1px solid gray" class="card-img-top" alt="..." />
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          <%= produitsConnexe[i].nom %>
+                        </h5>
+                        <p class="card-text">
+                          <%= produitsConnexe[i].description %>
+                        </p>
+                        <form action="/usagers/panier" method="post">
+                          <input type="hidden" name="product" id="product" value="<%= produitsConnexe[i]._id %>">
+                          <div class="mt-4">
+                            <button class="btn btn-success">
+                              <i class="fa fa-cart-plus"></i> Ajouter au panier
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %>
+          </div>
+        </div>
+
+      </div>
+</body>
+
+</html>

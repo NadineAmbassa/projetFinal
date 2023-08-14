@@ -1,0 +1,43 @@
+<style>
+    .action-column {
+      width: 25px;
+    }
+</style>
+<div class="container">
+    <a href="/usagers/admin">Retourner au menu admin</a>
+    <h1 class="text-center mb-4 mt-4">Liste des usagers</h1>
+    <div class="d-flex flex-column justify-content-evenly mb-3">
+        <a href="/usagers/ajouter" class="btn btn-secondary">Ajouter un utilisateur</a>
+    </div>
+    <%- include('./partiels/erreur_msg') %>
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+        <th>Courriel</th>
+        <th>Nom</th>
+        <th>Role</th>
+            <th>Modification/Supression</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% usagers.forEach(function(usagers) { %>
+        <tr>
+        <td><%= usagers.courriel %></td>
+        <td><%= usagers.nom %></td>
+        <td><%= usagers.role %></td>
+        <td class="action-column">
+            <a href="/usagers/modifier/<%= usagers._id %>" class="btn btn-primary">Modifier</a>
+            <a href="/usagers/supprimer/<%= usagers._id %>" class="btn btn-danger" onclick="return confirmerSuppression()">Supprimer</a>
+        </td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
+</div>
+
+<script>
+    function confirmerSuppression() {
+        return confirm("Êtes-vous sur de vouloir supprimer cet usager?")
+    }
+</script>
+

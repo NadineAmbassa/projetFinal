@@ -1,0 +1,44 @@
+[
+
+    {
+    "nom" : "manteau", 
+    "prix": 100,
+    "description":"Pour certaines personnes, passer une IRM s’avère une expérience angoissante. C’est ce que découvre Théodore Moisan, un écrivain au succès modeste, pour qui ce simple examen médical se transforme, en une épreuve terrifiante. À la suite de l’examen, Théodore oublie certains trucs, comme son dîner avec sa fille Camille, ou le lancement littéraire de sa collègue Gerda. Et quelque chose cloche autour de lui : les gens agissent bizarrement, et même sa femme, Julia, lui paraît différente, détachée… L’IRM de Théodore a peut-être causé ses pertes de mémoire, mais comment peut-il avoir un impact sur les gens autour de lui ? D’ailleurs, est-ce les gens qui ont changé… ou lui-même ?,",
+    "categorie": "Mode",
+    "imageProduit": "https://media.istockphoto.com/id/532558882/fr/photo/cuisine-rouge-table-de-mixage.jpg?s=612x612&w=0&k=20&c=Y9DP9eUvtRQ2X7H1UG9iJo2UIfTojQfNkqUFhzOU9Qg="
+    },
+    {
+    "nom" : "batteuse", 
+    "prix": 50,
+    "description":"Bonjour. Je m’appelle Florence Roberge et j’ai huit ans. J’ai commencé un journal intime. Je trouve que c’est une bonne idée parce que je peux parler de mes amies. Et je peux aussi parler de mes parents. Des fois, papa et maman se chicanent fort parce qu’ils parlent de moi. Papa dit que je suis bizarre et qu’on aurait dû écouter le docteur que j’ai vu l’année passée. Maman n’est pas d’accord... Mononcle Hubert m’a dit que personne n’a le droit de lire mon journal. Ça, c’est le fun, parce que je vais pouvoir tout écrire, même les affaires que je me ferais chicaner si on savait que je les avais faites. Comme ce qui est arrivé quand je suis allée voir le rat mort dans la poubelle...",
+    "categorie": "Maison et cuisine",
+    "imageProduit": "https://media.istockphoto.com/id/532558882/fr/photo/cuisine-rouge-table-de-mixage.jpg?s=612x612&w=0&k=20&c=Y9DP9eUvtRQ2X7H1UG9iJo2UIfTojQfNkqUFhzOU9Qg="
+    },
+    {
+    "nom" : "ballon", 
+    "prix": 85,
+    "categorie":"Sport",
+    "description":"Pour certaines personnes, passer une IRM s’avère une expérience angoissante. C’est ce que découvre Théodore Moisan, un écrivain au succès modeste, pour qui ce simple examen médical se transforme, en une épreuve terrifiante. À la suite de l’examen, Théodore oublie certains trucs, comme son dîner avec sa fille Camille, ou le lancement littéraire de sa collègue Gerda. Et quelque chose cloche autour de lui : les gens agissent bizarrement, et même sa femme, Julia, lui paraît différente, détachée… L’IRM de Théodore a peut-être causé ses pertes de mémoire, mais comment peut-il avoir un impact sur les gens autour de lui ? D’ailleurs, est-ce les gens qui ont changé… ou lui-même ?,",
+    "imageProduit": "https://media.istockphoto.com/id/532558882/fr/photo/cuisine-rouge-table-de-mixage.jpg?s=612x612&w=0&k=20&c=Y9DP9eUvtRQ2X7H1UG9iJo2UIfTojQfNkqUFhzOU9Qg="
+    },
+    {
+    "nom" : "huiles essentielles", 
+    "prix": 30,
+    "categorie": "Santé et beauté",
+    "description":"Les trois derniers souhaits d’un homme atteint d’un mal incurable. Une impératrice excentrique à la tête d’un réseau de trafic humain. Une dangereuse organisation criminelle qui règne en maître dans un quartier malfamé. Un père qui ne reculera devant rien ni personne pour subvenir aux besoins de son fils... David Bédard nous livre une réécriture à la fois fascinante et perturbante du conte arabo-perse Aladin ou la Lampe merveilleuse, récit qui a poussé des générations entières à s’interroger sur leurs voeux les plus ardents. Si vous croyez avoir les nerfs assez solides, frottez ce roman comme s’il s’agissait de la lampe du génie et ouvrez-le...",
+    "imageProduit": "https://media.istockphoto.com/id/532558882/fr/photo/cuisine-rouge-table-de-mixage.jpg?s=612x612&w=0&k=20&c=Y9DP9eUvtRQ2X7H1UG9iJo2UIfTojQfNkqUFhzOU9Qg="
+    },
+    { 
+    "nom" : "Casques", 
+    "prix": 150,
+    "categorie": "Electronique",
+    "description": "Un vieillard et son teckel coulant des jours paisibles jusqu’à l’arrivée de nouveaux voisins. Un père et une mère de famille ne remettant jamais en question leurs paroles ou leurs agissements devant leur unique enfant. Une  princesse de Monaco  qui n’attend qu’un signe pour enclencher les rouages du destin. Un gardien prêt à  offrir  son temps et à donner des leçons sans compter. Avec Le Bonhomme Sept Heures, l’prix Yvan Godbout s’éloigne de la noirceur et des horreurs de ses contes précédents pour explorer un univers à la lisière du fantastique.Dans cet opus, les apparences peuvent être trompeuses. Derrière des yeux bienveillants peuvent se dissimuler ceux d’un croquemitaine,",
+    "imageProduit": "https://media.istockphoto.com/id/532558882/fr/photo/cuisine-rouge-table-de-mixage.jpg?s=612x612&w=0&k=20&c=Y9DP9eUvtRQ2X7H1UG9iJo2UIfTojQfNkqUFhzOU9Qg="
+    }
+    
+    
+    
+    
+    ]
+    
+    
